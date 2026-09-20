@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTW Baku 2027 | Global Tech Weekend</title>
+  <meta name="description" content="Global Tech Weekend is coming to Baku in 2027, connecting Azerbaijan's innovation ecosystem with founders, investors, companies and institutions across the GTW network.">
+  <meta name="theme-color" content="#030316">
+
+  <meta property="og:title" content="GTW Baku 2027 | Global Tech Weekend">
+  <meta property="og:description" content="Baku is joining the Global Tech Weekend network in 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gtwbaku.az/">
+  <meta property="og:image" content="https://gtwbaku.az/baku-skyline.webp">
+  <meta property="og:image:alt" content="Baku skyline and the Flame Towers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GTW Baku 2027 | Global Tech Weekend">
+  <meta name="twitter:description" content="Baku is joining the GTW network in 2027.">
+  <meta name="twitter:image" content="https://gtwbaku.az/baku-skyline.webp">
+  <link rel="canonical" href="https://gtwbaku.az/">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <style>
+    @font-face{
+      font-family:'InterTight';
+      src:url('inter-tight-subset.ttf') format('truetype');
+      font-display:swap;
+    }
+    @font-face{
+      font-family:'AcroMono';
+      src:url('acro-mono-subset.otf') format('opentype');
+      font-display:swap;
+    }
+
+    :root{
+      --bg:        #000016;
+      --bg-panel:  #060a26;
+      --bg-panel2: #0c1030;
+      --bg-alt:    #05051b;
+      --ink:       #ffffff;
+      --ink-soft:  #a5acca;
+      --ink-faint: #8b93b8;
+      --teal:      #00fdff;
+      --teal-deep: #6df5f6;
+      --teal-tint: rgba(0,253,255,.12);
+      --accent-ink:#00fdff;
+      --magenta:   #f027d6;
+      --line:      rgba(255,255,255,.12);
+      --radius:    16px;
+      --maxw:      1180px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'InterTight','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+      font-size:16px;
+    }
+    img{max-width:100%;display:block;}
+    a{color:inherit;}
+    .mono{
+      font-family:'AcroMono','SFMono-Regular',Consolas,monospace;
+      letter-spacing:.01em;
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 28px;
+    }
+
+    a:focus-visible,button:focus-visible{
+      outline:2px solid var(--teal);
+      outline-offset:3px;
+      border-radius:4px;
+    }
+
+    /* ---------- light/dark section rhythm ---------- */
+    section.light{
+      --bg-panel:  #ffffff;
+      --bg-panel2: #eef4f3;
+      --ink:       #10233B;
+      --ink-soft:  #45566b;
+      --ink-faint: #6b7c8f;
+      --line:      #dee6e2;
+      --accent-ink:#0a8e94;
+      --teal-deep: #076b70;
+      --teal-tint: rgba(10,142,148,.1);
+      background:#f7f8f6;
+      color:var(--ink);
+    }
+    section.dark{ background:var(--bg-alt); }
+
+    .eyebrow{
+      display:block; font-family:'AcroMono',monospace; font-size:.8rem;
+      text-transform:uppercase; letter-spacing:.09em; color:var(--accent-ink);
+      margin-bottom:16px;
+    }
+
+    /* ---------- header ---------- */
+    header{
+      position:sticky; top:0; z-index:40;
+      background:rgba(0,0,22,.85);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0;
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+    .brand img{height:26px; width:auto;}
+    .brand .word{line-height:1.1;}
+    .brand .word b{display:block; font-weight:700; font-size:1rem; color:#fff;}
+    .brand .word span{display:block; font-size:.75rem; color:#8b93b8;}
+
+    .nav-links{
+      display:flex; align-items:center; gap:30px;
+      list-style:none; margin:0; padding:0;
+    }
+    .nav-links a{
+      text-decoration:none; font-size:1rem; color:#a5acca;
+      transition:color .15s;
+    }
+    .nav-links a:hover{color:#fff;}
+    .nav-links .ext{display:inline-flex; align-items:center; gap:4px;}
+
+    .btn{
+      display:inline-block;
+      padding:.85rem 1.4rem;
+      border-radius:10px;
+      font-size:.98rem;
+      font-weight:600;
+      text-decoration:none;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:transform .12s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:active{transform:translateY(1px);}
+    .btn-primary{background:var(--teal); color:#020214;}
+    .btn-primary:hover{background:#fff;}
+    .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink);}
+    .btn-ghost:hover{border-color:var(--teal); color:var(--teal-deep);}
+
+    .menu-btn{
+      display:none;
+      background:none; border:1px solid rgba(255,255,255,.2); border-radius:8px;
+      width:40px; height:40px; padding:0;
+    }
+    .menu-btn span{
+      display:block; width:18px; height:2px; margin:4px auto;
+      background:#fff;
+    }
+
+    /* ---------- hero ---------- */
+    .hero{padding:68px 0 60px; background:var(--bg);}
+    .hero-grid{
+      display:grid; grid-template-columns:1.05fr .95fr;
+      gap:56px; align-items:center;
+    }
+    .hero h1{
+      font-size:clamp(2.6rem,5.4vw,4.2rem);
+      line-height:1.06;
+      font-weight:700;
+      margin:0 0 22px;
+      letter-spacing:-.015em;
+    }
+    .hero p.lead{
+      font-size:1.2rem; color:var(--ink-soft);
+      max-width:46ch; margin:0 0 30px;
+    }
+    .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:40px;}
+
+    .stat-row{display:flex; gap:40px; flex-wrap:wrap;}
+    .stat-row div b{
+      display:block; font-family:'AcroMono',monospace;
+      font-size:1.65rem; color:var(--teal);
+    }
+    .stat-row div span{font-size:.9rem; color:var(--ink-faint);}
+
+    .hero-visual{position:relative;}
+    .hero-visual .frame{
+      position:relative; border-radius:var(--radius); overflow:hidden;
+      box-shadow:0 24px 48px -24px rgba(0,0,0,.65);
+    }
+    .hero-visual img{
+      filter:saturate(.85) contrast(1.05);
+      width:100%; height:100%; object-fit:cover; aspect-ratio:4/5;
+    }
+    .hero-visual .tint{
+      position:absolute; inset:0;
+      background:linear-gradient(200deg, rgba(0,0,22,.08) 35%, rgba(0,0,22,.9));
+    }
+    .hero-visual .cap{
+      position:absolute; left:20px; bottom:18px; right:20px;
+      color:#fff; font-size:.85rem;
+    }
+    .hero-visual .cap b{display:block; font-size:1.05rem; font-weight:600;}
+
+    /* ---------- sections ---------- */
+    section{padding:100px 0;}
+    .section-head{max-width:640px; margin:0 0 48px;}
+    .section-head h2{
+      font-size:clamp(2rem,3.8vw,2.85rem);
+      font-weight:700; margin:0 0 16px; letter-spacing:-.015em;
+    }
+    .section-head p{color:var(--ink-soft); margin:0; font-size:1.12rem;}
+
+    /* about */
+    .reasons{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:28px 40px;
+      margin-bottom:56px;
+    }
+    .reason h3{margin:0 0 8px; font-size:1.15rem;}
+    .reason p{margin:0; color:var(--ink-soft); font-size:1rem;}
+
+    .about-platform{
+      border-top:1px solid var(--line); padding-top:48px;
+    }
+    .about-platform p{color:var(--ink-soft); max-width:64ch; font-size:1.05rem; margin:0 0 32px;}
+    .markets{display:flex; flex-wrap:wrap; gap:32px;}
+    .markets div b{display:block; font-size:1.08rem;}
+    .markets div span{color:var(--ink-faint); font-size:.88rem;}
+
+    /* what's on */
+    .format-grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:56px;
+    }
+    .format-card{
+      position:relative; border-radius:var(--radius); overflow:hidden;
+      aspect-ratio:4/5;
+    }
+    .format-card img{
+      width:100%; height:100%; object-fit:cover;
+      filter:saturate(.9) contrast(1.05);
+    }
+    .format-card .tint{
+      position:absolute; inset:0;
+      background:linear-gradient(0deg, rgba(0,0,22,.92), rgba(0,0,22,.15) 55%);
+    }
+    .format-card .txt{position:absolute; left:20px; right:20px; bottom:20px; color:#fff;}
+    .format-card h3{margin:0 0 6px; font-size:1.1rem;}
+    .format-card p{margin:0; font-size:.9rem; color:#c7d2dc;}
+
+    .recap{
+      display:flex; flex-wrap:wrap; align-items:center; gap:48px;
+      border-top:1px solid var(--line); padding-top:48px;
+    }
+    .recap-text{flex:1 1 240px;}
+    .recap-text p{color:var(--ink-soft); font-size:1.05rem; max-width:44ch; margin:0;}
+    .video-frame{
+      position:relative; border-radius:var(--radius); overflow:hidden;
+      width:min(100%, 300px); aspect-ratio:9/16; margin:0 auto;
+      background:var(--bg-panel); border:1px solid var(--line); flex-shrink:0;
+    }
+    .video-frame iframe{width:100%; height:100%; border:0; display:block;}
+
+    /* speakers */
+    .speaker-grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+    }
+    .speaker-card{
+      background:var(--bg-panel); border:1px solid var(--line);
+      border-radius:var(--radius); padding:26px; text-align:center;
+    }
+    .speaker-photo{
+      width:88px; height:88px; border-radius:50%; margin:0 auto 18px;
+      background:var(--bg-panel2); color:var(--ink-faint);
+      display:flex; align-items:center; justify-content:center; overflow:hidden;
+    }
+    .speaker-photo img{width:100%; height:100%; object-fit:cover; border-radius:50%;}
+    .speaker-card h3{margin:0 0 5px; font-size:1.08rem;}
+    .speaker-role{color:var(--ink-soft); font-size:.92rem; margin-bottom:8px;}
+    .speaker-link{color:var(--accent-ink); font-size:.88rem; font-weight:600; text-decoration:none;}
+    .speaker-link:hover{text-decoration:underline;}
+
+    /* participation */
+    .involve-grid{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+    }
+    .involve-card{
+      border:1px solid var(--line); border-radius:var(--radius);
+      padding:28px; background:var(--bg-panel);
+      display:flex; flex-direction:column; height:100%;
+    }
+    .involve-card .bar{
+      width:32px; height:4px; border-radius:2px; background:var(--teal);
+      margin-bottom:20px;
+    }
+    .involve-card h3{margin:0 0 8px; font-size:1.15rem;}
+    .involve-card p{margin:0 0 22px; color:var(--ink-soft); font-size:1rem; flex-grow:1;}
+    .involve-card a{
+      font-weight:600; color:var(--accent-ink); text-decoration:none; font-size:1rem;
+    }
+    .involve-card a:hover{text-decoration:underline;}
+
+    /* partners */
+    .partner-strip{display:flex; flex-wrap:wrap; gap:20px;}
+    .partner-slot{
+      width:150px; height:72px; border-radius:12px;
+      border:1px dashed var(--line); background:var(--bg-panel);
+      flex:1 1 150px; max-width:200px;
+    }
+
+    /* faq */
+    .faq-list{max-width:780px;}
+    .faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
+    .faq-item summary{
+      cursor:pointer; font-weight:600; font-size:1.08rem; color:var(--ink);
+      list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+    }
+    .faq-item summary::-webkit-details-marker{display:none;}
+    .faq-item summary::after{content:'+'; color:var(--accent-ink); font-size:1.4rem; flex-shrink:0;}
+    .faq-item[open] summary::after{content:'\2212';}
+    .faq-item p{margin:14px 0 0; color:var(--ink-soft); font-size:1rem; max-width:66ch;}
+
+    /* leadership */
+    .lead-grid{
+      display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center;
+      background:var(--bg-panel); border:1px solid var(--line);
+      border-radius:var(--radius); padding:40px;
+    }
+    .avatar{
+      width:80px; height:80px; border-radius:50%;
+      background:var(--teal-tint); color:var(--accent-ink);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:1.35rem; font-family:'AcroMono',monospace;
+    }
+    .lead-grid h3{margin:0 0 4px; font-size:1.2rem;}
+    .lead-grid .role{color:var(--accent-ink); font-size:.92rem; font-weight:600; margin-bottom:12px;}
+    .lead-grid p{margin:0 0 14px; color:var(--ink-soft); font-size:1rem; max-width:58ch;}
+    .lead-grid a{color:var(--accent-ink); font-weight:600; text-decoration:none; font-size:.92rem;}
+    .lead-grid a:hover{text-decoration:underline;}
+
+    /* final cta */
+    .final-cta{
+      background:
+        radial-gradient(circle at 15% 120%, rgba(0,253,255,.22), transparent 40%),
+        radial-gradient(circle at 92% -20%, rgba(240,39,214,.18), transparent 45%),
+        linear-gradient(rgba(8,8,33,.88), rgba(8,8,33,.94)),
+        url('https://framerusercontent.com/images/zvRjHfeDv3eoQ8LMH71U0Lc0.jpg') center/cover,
+        #080821;
+      color:#fff; border-radius:24px;
+      padding:60px 40px; text-align:center;
+    }
+    .final-cta h2{font-size:clamp(1.8rem,3.2vw,2.3rem); margin:0 0 16px;}
+    .final-cta p{color:#C7D2DC; max-width:52ch; margin:0 auto 30px; font-size:1.1rem;}
+    .final-cta .hero-ctas{justify-content:center;}
+    .final-cta .btn-ghost{border-color:rgba(255,255,255,.25); color:#fff;}
+    .final-cta .btn-ghost:hover{border-color:var(--teal);}
+
+    /* footer */
+    footer{padding:52px 0 44px; background:var(--bg); border-top:1px solid rgba(255,255,255,.12);}
+    .footer-top{
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:22px; margin-bottom:26px;
+    }
+    .footer-links{display:flex; gap:24px; flex-wrap:wrap; list-style:none; margin:0; padding:0;}
+    .footer-links a{text-decoration:none; color:#a5acca; font-size:.92rem;}
+    .footer-links a:hover{color:#fff;}
+    .footer-bottom{color:#8b93b8; font-size:.88rem;}
+
+    /* reveal on scroll — single orchestrated pattern */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+    .reveal.visible{opacity:1; transform:none;}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto;}
+      .reveal{opacity:1; transform:none; transition:none;}
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width:900px){
+      .nav-links{
+        position:fixed; top:64px; left:0; right:0; bottom:0;
+        background:#000016; padding:24px 28px; gap:20px;
+        flex-direction:column; align-items:flex-start;
+        transform:translateX(100%); transition:transform .2s ease;
+      }
+      .nav-links.open{transform:translateX(0);}
+      .menu-btn{display:block;}
+      .hero-grid{grid-template-columns:1fr;}
+      .hero-visual{order:-1;}
+      .hero-visual .frame img{aspect-ratio:16/9;}
+      .reasons,.format-grid,.speaker-grid,.involve-grid{grid-template-columns:1fr;}
+      .lead-grid{grid-template-columns:1fr; text-align:left;}
+      .recap{flex-direction:column;}
+      section{padding:64px 0;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <a class="brand" href="#top">
+      <img src="gtw-logo.png" alt="GTW">
+      <span class="word"><b>Baku</b><span>Coming 2027</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#whats-on">What's On</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#participation">Participation</a></li>
+      <li><a class="ext" href="https://globaltechweekend.io" target="_blank" rel="noopener">Global GTW</a></li>
+      <li><a class="btn btn-primary" href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20Partnership">Talk to Valid</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>A global network is choosing its fifth city.</h1>
+        <p class="lead">Global Tech Weekend turns entire cities into innovation platforms. In 2027, Baku's own companies, universities and institutions start hosting the next chapter — connected to founders, investors and partners across the GTW network.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#participation">Become a founding partner</a>
+          <a class="btn btn-ghost" href="#whats-on">See how it works</a>
+        </div>
+        <div class="stat-row">
+          <div><b>30K+</b><span>Attendees across GTW</span></div>
+          <div><b>4</b><span>Editions delivered</span></div>
+          <div><b>3</b><span>Established markets</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <img src="baku-skyline.webp" alt="Baku skyline and the Flame Towers">
+          <div class="tint"></div>
+          <div class="cap"><b>Baku, Azerbaijan</b>A new market for the GTW platform</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="light">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">About</span>
+        <h2>Not another local meetup.</h2>
+        <p>GTW is a US platform with a track record — not a conference brand assembled for one city.</p>
+      </div>
+      <div class="reasons">
+        <div class="reason reveal">
+          <h3>American roots, real capital</h3>
+          <p>Founded in Los Angeles and backed by Silicon Valley investors — GTW brings real US network access, not just a conference badge.</p>
+        </div>
+        <div class="reason reveal">
+          <h3>A track record, not a promise</h3>
+          <p>Four editions and 30,000+ attendees already delivered across San Francisco, Tashkent and Tbilisi. Los Angeles joins the network this December, ahead of Baku in 2027.</p>
+        </div>
+        <div class="reason reveal">
+          <h3>Speakers with real reputations</h3>
+          <p>Sessions are built around founders, operators and investors with international standing, not a rotating local keynote circuit.</p>
+        </div>
+        <div class="reason reveal">
+          <h3>One market, every market</h3>
+          <p>Every Baku host and partner plugs directly into the same network GTW has already built across four other cities.</p>
+        </div>
+      </div>
+      <div class="about-platform reveal">
+        <p>Global Tech Weekend is a US technology and innovation platform connecting founders, investors, companies, institutions and governments across Central Asia, the Caucasus and the United States. Founded in Los Angeles, GTW turns cities into connected innovation platforms through locally led events, international speakers, investor access and ecosystem partnerships.</p>
+        <div class="markets">
+          <div><b>Los Angeles</b><span>Upcoming, Dec 2026</span></div>
+          <div><b>San Francisco</b><span>Delivered, 2026</span></div>
+          <div><b>Tashkent</b><span>Delivered, 2026</span></div>
+          <div><b>Tbilisi</b><span>Delivered, 2025&ndash;2026</span></div>
+          <div><b>Baku</b><span>Coming 2027</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S ON -->
+  <section id="whats-on" class="dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's On</span>
+        <h2>The same stages, coming to Baku.</h2>
+        <p>These are the formats already running across every GTW city — the same programming Baku joins in 2027.</p>
+      </div>
+      <div class="format-grid">
+        <div class="format-card reveal">
+          <img src="tbilisi-main-stage.jpg" alt="Visionary talks on the GTW main stage">
+          <div class="tint"></div>
+          <div class="txt">
+            <h3>Visionary Talks</h3>
+            <p>Founders, investors and operators sharing hard-won insight on the main stage.</p>
+          </div>
+        </div>
+        <div class="format-card reveal">
+          <img src="tbilisi-side-event.jpg" alt="A GTW community side event">
+          <div class="tint"></div>
+          <div class="txt">
+            <h3>Community &amp; Side Events</h3>
+            <p>Focused gatherings hosted by local companies, universities and hubs across the city.</p>
+          </div>
+        </div>
+        <div class="format-card reveal">
+          <img src="tbilisi-closing.jpg" alt="A GTW closing ceremony">
+          <div class="tint"></div>
+          <div class="txt">
+            <h3>Closing &amp; Networking</h3>
+            <p>Curated closing experiences that turn a weekend into lasting relationships.</p>
+          </div>
+        </div>
+      </div>
+      <div class="recap reveal">
+        <div class="recap-text">
+          <h3 style="margin:0 0 10px;font-size:1.2rem;">See it in motion.</h3>
+          <p>Highlights from GTW Tbilisi — the same energy Baku is joining in 2027.</p>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://drive.google.com/file/d/19jgjkv2HJ6bbfvs0aFeICG1ouW2qUU54/preview" title="GTW event highlights" allow="autoplay" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section id="speakers" class="light">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Speakers</span>
+        <h2>Voices from the network.</h2>
+        <p>A sample of the founders, operators and investors GTW has already brought on stage across San Francisco, Tashkent and Tbilisi.</p>
+      </div>
+      <div class="speaker-grid">
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/B8j1hEPL0bXwbeywaroyeqUyfII.jpeg" alt="Monika Bielskyte" loading="lazy"></div>
+          <h3>Monika Bielskyte</h3>
+          <div class="speaker-role">Protopia Futures &amp; Nike</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/monikabielskyte/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/gRUFDCvEQZLGmWsw5bjb9wQ1j88.jpeg" alt="Sam Kaploushenko" loading="lazy"></div>
+          <h3>Sam Kaploushenko</h3>
+          <div class="speaker-role">Finon &amp; KOLO tech</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/kaploushenko/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/OLjae3A6e9I8PIX8KklicGiJTIc.jpeg" alt="Ronald Weissman" loading="lazy"></div>
+          <h3>Ronald Weissman</h3>
+          <div class="speaker-role">Angel Capital Association</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/ronald-weissman-36a3841/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/RGfwTqFDlHq0mdKs9vuXFnpji1Y.jpeg" alt="Xavier Buck" loading="lazy"></div>
+          <h3>Xavier Buck</h3>
+          <div class="speaker-role">NameSpace</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/xavierbuck/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/1htikwsSubfPiaK2Icm1psDDsnw.jpg" alt="Jana Saastamoinen" loading="lazy"></div>
+          <h3>Jana Saastamoinen</h3>
+          <div class="speaker-role">EstBAN</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/janasaastamoinen/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="speaker-card reveal">
+          <div class="speaker-photo"><img src="https://framerusercontent.com/images/4zCXw8gD7J9IYjwZStJhDrX8T4c.jpg" alt="Amy Nordrum" loading="lazy"></div>
+          <h3>Amy Nordrum</h3>
+          <div class="speaker-role">MIT Technology Review</div>
+          <a class="speaker-link" href="https://www.linkedin.com/in/amynordrum/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPATION -->
+  <section id="participation" class="dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Participation</span>
+        <h2>Four ways in.</h2>
+        <p>GTW Baku is being built with companies, institutions, speakers and ecosystem leaders now, ahead of 2027.</p>
+      </div>
+      <div class="involve-grid">
+        <div class="involve-card reveal">
+          <div class="bar"></div>
+          <h3>Host an event</h3>
+          <p>Run a focused gathering for your sector or community as part of the citywide program.</p>
+          <a href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20%E2%80%94%20Host%20an%20Event">Propose a session</a>
+        </div>
+        <div class="involve-card reveal">
+          <div class="bar"></div>
+          <h3>Become a partner</h3>
+          <p>Put your brand and network behind GTW Baku's build-out, from founding partner to media partner.</p>
+          <a href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20Partnership">Talk about partnership</a>
+        </div>
+        <div class="involve-card reveal">
+          <div class="bar"></div>
+          <h3>Apply to speak</h3>
+          <p>Share your expertise with the network — apply to take the stage at a future GTW edition.</p>
+          <a href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20%E2%80%94%20Speak">Apply to speak</a>
+        </div>
+        <div class="involve-card reveal">
+          <div class="bar"></div>
+          <h3>Join the network</h3>
+          <p>Get early updates as the program, hosts and speaker list take shape ahead of 2027.</p>
+          <a href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20%E2%80%94%20Add%20Me">Get updates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section id="partners" class="light">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Partners</span>
+        <h2>Building this with the network.</h2>
+        <p>GTW Baku is taking shape alongside organizations across the region and the wider GTW network. Partner logos land here as they're confirmed.</p>
+      </div>
+      <div class="partner-strip reveal">
+        <div class="partner-slot"></div>
+        <div class="partner-slot"></div>
+        <div class="partner-slot"></div>
+        <div class="partner-slot"></div>
+        <div class="partner-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered.</h2>
+        <p>Still got questions? Reach out to Valid directly and we'll help.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>What is GTW Baku?</summary>
+          <p>GTW Baku is Baku's edition of Global Tech Weekend — a citywide platform where local hosts run focused events, all connected to GTW's international network of founders, investors and speakers. It arrives in Baku in 2027.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can my company host an event?</summary>
+          <p>Reach out through the options above. The GTW team reviews every proposal, and once approved, your event is added to the official Baku program.</p>
+        </details>
+        <details class="faq-item">
+          <summary>When exactly is GTW Baku?</summary>
+          <p>GTW Baku is set for 2027. Exact dates will be announced as the program is finalized — reach out directly to hear first.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can I get involved if I'm not hosting?</summary>
+          <p>Companies, investors and institutions can partner, individuals can apply to speak, and anyone can ask to be added to updates — all through the options above.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="light">
+    <div class="wrap">
+      <div class="lead-grid reveal">
+        <div class="avatar">VM</div>
+        <div>
+          <h3>Valid Mammadli</h3>
+          <div class="role">Co-Founder and CEO, GTW Baku</div>
+          <p>Valid leads GTW Baku's build-out on the ground — connecting the platform to Azerbaijan's companies, institutions and international partners, and shaping the program city by city.</p>
+          <a href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027">valid@gtwbaku.az</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="final-cta reveal">
+        <h2>Let's build Baku's chapter together.</h2>
+        <p>Companies, institutions and community leaders interested in hosting, partnering or contributing to GTW Baku are welcome to reach out to Valid directly.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="mailto:valid@gtwbaku.az?subject=GTW%20Baku%202027%20Partnership">Partner with GTW Baku</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/company/global-tech-weekend-baku/posts/?feedView=all" target="_blank" rel="noopener">Follow on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#top">
+        <img src="gtw-logo.png" alt="GTW">
+        <span class="word"><b>Baku</b><span>Coming 2027</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#whats-on">What's On</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#participation">Participation</a></li>
+        <li><a href="mailto:valid@gtwbaku.az">Contact</a></li>
+        <li><a href="https://www.linkedin.com/company/global-tech-weekend-baku/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://globaltechweekend.io" target="_blank" rel="noopener">Global GTW</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">Part of the Global Tech Weekend platform. &copy; 2026 MetaViu Corp. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const menu = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  menu.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+</script>
+
+</body>
+</html>
